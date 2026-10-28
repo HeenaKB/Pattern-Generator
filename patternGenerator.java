@@ -7,7 +7,12 @@
 
 public class patternGenerator {
     public static void stars(int rows){
-    System.out.print("Heena is stupid");
+          int star = 7;
+          while (star <= 7)
+          {
+            System.out.print(star);
+            star += 2;
+          }
     }
 
     public static void main(String[] args) {
