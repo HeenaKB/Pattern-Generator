@@ -49,6 +49,10 @@ public class patternGenerator {
   System.out.println();
 }
 
+// Pre-condition:
+//Post-condition:
+
+
 
 
     public static void main(String[] args) {
