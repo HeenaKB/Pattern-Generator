@@ -73,31 +73,33 @@ public class patternGenerator {
       } else {
         i = "E";
      }
+     System.out.println();
   }
 
   //Pre-condition:
   //Post-condition:
   public static void pyramid(int rows){
-     for (; rows > 0; rows-=2) {
-      for (int i = 0;  i< rows; i++){
-        System.out.print(i +" ");
+       for (int i = rows; i >= 1; i--) {
+      for (int j = i;  j<rows; j++){
+        System.out.print(" ");
       } 
+      for (int k = 1; k<=i; k++) {
+        System.out.print("* ");
+      }
       System.out.println();
   }
   System.out.println();
+}
 
-  }
-String star = "*";
-          while (rows > 0)
-          {
-            System.out.println(star);
-            star = star + "**";
-            rows -= 1;
-          }
-          System.out.println();
+
+
+
+
+
+
  
     public static void main(String[] args) {
-         eo(6);
+         pyramid(5);
     }
 }
 
