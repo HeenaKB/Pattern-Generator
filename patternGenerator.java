@@ -51,14 +51,53 @@ public class patternGenerator {
 
 // Pre-condition:
 //Post-condition:
+  public static void eo(int maxE){
+    String i = "E";
+   if(maxE % 2 == 0){
+          i = "O";
+   }
+     for (int j =0; j <maxE; j++){
+        System.out.print(i);
+      }
+      if (i.equals("E")){
+        i = "O";
+      }else{
+        i = "E";
+     }
 
+      for (int j = 0; j > maxE; j--){
+        System.out.print(i);
+      }
+      if (i.equals("E")){
+        i = "O";
+      } else {
+        i = "E";
+     }
+  }
 
+  //Pre-condition:
+  //Post-condition:
+  public static void pyramid(int rows){
+     for (; rows > 0; rows-=2) {
+      for (int i = 0;  i< rows; i++){
+        System.out.print(i +" ");
+      } 
+      System.out.println();
+  }
+  System.out.println();
 
-
+  }
+String star = "*";
+          while (rows > 0)
+          {
+            System.out.println(star);
+            star = star + "**";
+            rows -= 1;
+          }
+          System.out.println();
+ 
     public static void main(String[] args) {
-         stars(7);
-         triangle(9);
-         odds(9);
+         eo(6);
     }
 }
 
