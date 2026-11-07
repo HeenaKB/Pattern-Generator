@@ -7,11 +7,11 @@
 
 public class patternGenerator {
 
-  //  Pre-condition: what must be true prior to the method being called //  including possible limitations on input
-//  Post-condition: what the result of executing this method will be.
+  //  Pre-condition: rows must be greater than or equal to 0.
+//  Post-condition: prints a triangle of stars.
     public static void stars(int rows){
           String star = "*";
-          while (rows > 0)
+          while (rows >= 0)
           {
             System.out.println(star);
             star = star + "**";
@@ -20,15 +20,15 @@ public class patternGenerator {
           System.out.println();
     }
 
- //  Pre-condition: what must be true prior to the method being called //  including possible limitations on input
-//  Post-condition: what the result of executing this method will be.
+ //  Pre-condition: rows must be greater than or equal to 0.
+//  Post-condition: prints a triangle of increasing numbers.
     public static void triangle(int rows){
       int i = 0;
       while (i < rows) {
         i++;
         int j = 0;
         while (j < i) {
-          System.out.print(i + " ");
+          System.out.print(i);
           j++;
         }
         System.out.println();
@@ -37,68 +37,77 @@ public class patternGenerator {
     }
   
 
-// Pre-condition: start is odd
-// Post-condition:
+// Pre-condition: start must be a positive odd number.
+// Post-condition: prints decreasing odd numbers.
   public static void odds(int start){
     for (; start > 0; start-=2) {
       for (int i = 0;  i<start; i++){
-        System.out.print(start+" ");
+        System.out.print(start);
       } 
       System.out.println();
   }
   System.out.println();
 }
 
-// Pre-condition:
-//Post-condition:
+// Pre-condition: maxE must be greater than or equal to 1.
+//Post-condition: prints an increasing and decreasing E and O pattern.
   public static void eo(int maxE){
-    String i = "E";
+    String letter = "E";
    if(maxE % 2 == 0){
-          i = "O";
+          letter = "O";
    }
-     for (int j =0; j <maxE; j++){
-        System.out.print(i);
+     for (int i =1; i <= maxE; i++){
+      for (int j = 0; j < i; j ++) {
+        System.out.print(letter);
       }
-      if (i.equals("E")){
-        i = "O";
+      System.out.println();
+
+      
+      if (letter.equals("E")){
+        letter = "O";
       }else{
-        i = "E";
+        letter = "E";
      }
 
-      for (int j = 0; j > maxE; j--){
-        System.out.print(i);
+    }
+      for (int i = maxE-1; i >= 1; i--){
+      for (int j = 0; j < i; j ++) {
+        System.out.print(letter);
       }
-      if (i.equals("E")){
-        i = "O";
-      } else {
-        i = "E";
-     }
-     System.out.println();
+      System.out.println();
+
+      if (letter.equals("E")){
+        letter = "O";
+      }else{
+        letter = "E";
+      }
+  }
+  System.out.println();
   }
 
-  //Pre-condition:
-  //Post-condition:
+
+  //Pre-condition: rows must be greater than or equal to 0.
+  //Post-condition: prints a pyramid of decreasing numbers.
   public static void pyramid(int rows){
-       for (int i = rows; i >= 1; i--) {
-      for (int j = i;  j<rows; j++){
+    for (int i = 1; i <= rows; i++) {
+      for (int j = 1;  j < i; j++){
         System.out.print(" ");
       } 
-      for (int k = 1; k<=i; k++) {
-        System.out.print("* ");
+      for (int k = 0; k < 2 * (rows - i) + 1; k++){
+        System.out.print(i);
       }
       System.out.println();
   }
   System.out.println();
 }
-
-
-
-
-
-
 
  
     public static void main(String[] args) {
+         stars(7);
+         triangle(9);
+         odds(9);
+         eo(6);
+         eo(5);
          pyramid(5);
     }
 }
